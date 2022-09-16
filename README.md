@@ -39,7 +39,7 @@ Just like with the .bat method, I'd recommend creating a folder within your stab
 
 - Depending on your operating system and specific installation of python you might need to replace `py` with `python`, `python3`, `conda` or something else entirely.
 
-## Acknowledgments
+## Credits
 
 - Thanks to Automatic and his fantastic Webui, I stole some of the code for the `merge.bat` from him.
-- I got the merging logic in `merge.py` from a script posted on the NSFW Stable-Diffusion Discord. Unfortunately, I am not sure who the original author of that is.
+- I got the merging logic in `merge.py` from [this post](https://discord.com/channels/1010980909568245801/1011008178957320282/1018117933894996038) by r_Sh4d0w, who seems to have gotten it from [mlfoundations/wise-ft](https://github.com/mlfoundations/wise-ft)
