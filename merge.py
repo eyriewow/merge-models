@@ -8,11 +8,13 @@ parser.add_argument("model_0", type=str, help="Path to model 0")
 parser.add_argument("model_1", type=str, help="Path to model 1")
 parser.add_argument("--alpha", type=float, help="Alpha value, optional, defaults to 0.5", default=0.5, required=False)
 parser.add_argument("--output", type=str, help="Output file name, without extension", default="merged", required=False)
+parser.add_argument("--device", type=str, help="Device to use, defaults to cpu", default="cpu", required=False)
 
 args = parser.parse_args()
 
-model_0 = torch.load(args.model_0, map_location='cpu')
-model_1 = torch.load(args.model_1, map_location='cpu')
+device = args.device
+model_0 = torch.load(args.model_0, map_location=device)
+model_1 = torch.load(args.model_1, map_location=device)
 theta_0 = model_0["state_dict"]
 theta_1 = model_1["state_dict"]
 alpha = args.alpha

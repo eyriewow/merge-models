@@ -32,8 +32,11 @@ Just like with the .bat method, I'd recommend creating a folder within your stab
     - `conda activate ldm`
 - run merge.py with arguments
   - `py merge.py model0 model1 --alpha 0.5 --output merged`
-    - `--alpha` controls how much weight is put on the second model. Defaults to 0.5, if omitted
-    - `--output` is the filename of the merged file, without file extension. Defaults to "merged", if omitted
+    - Optional: `--alpha` controls how much weight is put on the second model. Defaults to 0.5, if omitted
+    - Optional: `--output` is the filename of the merged file, without file extension. Defaults to "merged", if omitted
+    - Optional: `--device` is the device that's going to be used to merge the models. Unless you have a ton of VRAM, you should probably just ignore this. Defaults to 'cpu', if omitted.
+      - Required VRAM seems to be roughly equivalent to the size of `(size of both models) * 1.15`. Merging 2 models at 3.76GB resulted in rougly 8.6GB of VRAM usage on top of everything else going on.
+      - If you have enough VRAM to merge on your GPU you can use `--device "cuda:x"` where x is the card corresponding to the output of `nvidia-smi -L`
 
 ## Potential Problems & Troubleshooting
 
