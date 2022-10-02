@@ -11,8 +11,8 @@ parser.add_argument("--output", type=str, help="Output file name, without extens
 
 args = parser.parse_args()
 
-model_0 = torch.load(args.model_0)
-model_1 = torch.load(args.model_1)
+model_0 = torch.load(args.model_0, map_location='cpu')
+model_1 = torch.load(args.model_1, map_location='cpu')
 theta_0 = model_0["state_dict"]
 theta_1 = model_1["state_dict"]
 alpha = args.alpha

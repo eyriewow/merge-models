@@ -105,7 +105,7 @@ celerybeat.pid
 .env
 .venv
 env/
-venv/
+venv*/
 ENV/
 env.bak/
 venv.bak/
@@ -130,3 +130,6 @@ dmypy.json
 
 # ckpt
 *.ckpt
+
+#vscode
+.vscode/
